@@ -1,0 +1,162 @@
+[
+  {
+    "batch_0": [
+      {
+        "index": 0,
+        "category": "Contest",
+        "free": true,
+        "fees": 0,
+        "isDone": false
+      },
+      {
+        "index": 1,
+        "category": "Challenge",
+        "free": false,
+        "fees": 5,
+        "isDone": false
+      },
+      {
+        "index": 2,
+        "category": "Contest",
+        "free": true,
+        "fees": 0,
+        "isDone": false
+      },
+      {
+        "index": 3,
+        "category": "Pool",
+        "free": false,
+        "fees": 10,
+        "isDone": false
+      }
+    ]
+  },
+  {
+    "batch_1": [
+      {
+        "index": 0,
+        "category": "Contest",
+        "free": true,
+        "fees": 0,
+        "isDone": false
+      },
+      {
+        "index": 1,
+        "category": "Challenge",
+        "free": false,
+        "fees": 10,
+        "isDone": false
+      },
+      {
+        "index": 2,
+        "category": "Contest",
+        "free": true,
+        "fees": 0,
+        "isDone": false
+      },
+      {
+        "index": 3,
+        "category": "Pool",
+        "free": false,
+        "fees": 5,
+        "isDone": false
+      }
+    ]
+  },
+  {
+    "batch_2": [
+      {
+        "index": 0,
+        "category": "Contest",
+        "free": true,
+        "fees": 0,
+        "isDone": false
+      },
+      {
+        "index": 1,
+        "category": "Pool",
+        "free": false,
+        "fees": 10,
+        "isDone": false
+      },
+      {
+        "index": 2,
+        "category": "Challenge",
+        "free": false,
+        "fees": 5,
+        "isDone": false
+      },
+      {
+        "index": 3,
+        "category": "Pool",
+        "free": false,
+        "fees": 10,
+        "isDone": false
+      }
+    ]
+  },
+  {
+    "batch_3": [
+      {
+        "index": 0,
+        "category": "Contest",
+        "free": true,
+        "fees": 0,
+        "isDone": false
+      },
+      {
+        "index": 1,
+        "category": "Pool",
+        "free": false,
+        "fees": 15,
+        "isDone": false
+      },
+      {
+        "index": 2,
+        "category": "Contest",
+        "free": true,
+        "fees": 0,
+        "isDone": false
+      },
+      {
+        "index": 3,
+        "category": "Pool",
+        "free": false,
+        "fees": 10,
+        "isDone": false
+      }
+    ]
+  },
+  {
+    "batch_4": [
+      {
+        "index": 0,
+        "category": "Contest",
+        "free": true,
+        "fees": 0,
+        "isDone": false
+      },
+      {
+        "index": 1,
+        "category": "Challenge",
+        "free": false,
+        "fees": 15,
+        "isDone": false
+      },
+      {
+        "index": 2,
+        "category": "Pool",
+        "free": false,
+        "fees": 10,
+        "isDone": false
+      },
+      {
+        "index": 3,
+        "category": "Pool",
+        "free": false,
+        "fees": 10,
+        "isDone": false
+      }
+    ]
+  }
+]

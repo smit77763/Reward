@@ -16,6 +16,15 @@ const rewardSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  track: [
+    {
+      index: {
+        type: Number,
+        required: [true, "INDEX................"],
+      },
+      batchNumber: [Number],
+    },
+  ],
   batches: [
     {
       blocks: [

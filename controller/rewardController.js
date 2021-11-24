@@ -48,6 +48,7 @@ exports.createOne = async (req, res) => {
 
     newObject = {
       user_id: req.body.id,
+      track: [{ index: 0, batchNumber: [] }],
       batches: [{ blocks: rewardTypeList[0].batch_0 }],
     };
 
@@ -87,6 +88,7 @@ exports.updateReward = async (req, res) => {
 
     const lenOfBatches = userObj.lenOfBatches;
     const count = userObj.count;
+    // const objId = userObj.track[lenOfBatches]._id;
 
     // console.log(req.body.categoryDetails);
 
@@ -109,11 +111,15 @@ exports.updateReward = async (req, res) => {
             "batches.$[item].blocks.$[ele].date": new Date(),
             count: userObj.count + 1,
           },
+          $push: {
+            "track.$[val].batchNumber": 1,
+          },
         },
         {
           arrayFilters: [
             { "item._id": block_id },
             { "ele.index": indexNumber },
+            { "val.index": 0 },
           ],
         }
       );

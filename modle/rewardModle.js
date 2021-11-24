@@ -40,6 +40,10 @@ const rewardSchema = new mongoose.Schema({
             type: Boolean,
             default: false,
           },
+          date: {
+            type: Date,
+            default: new Date(),
+          },
         },
       ],
     },

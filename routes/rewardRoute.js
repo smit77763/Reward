@@ -9,4 +9,6 @@ router
   .post(rewardController.createOne)
   .put(rewardController.updateReward);
 
+router.route("/:id").get(rewardController.getOne);
+
 module.exports = router;

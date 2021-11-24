@@ -21,6 +21,25 @@ exports.getAllReward = async (req, res) => {
   }
 };
 
+exports.getOne = async (req, res) => {
+  try {
+    const query = await rewardCollection.find({ user_id: req.params.id });
+    res.status(201).json({
+      status: "SUCCESS",
+      data: {
+        length: query.length,
+        rewardList: query,
+      },
+    });
+  } catch (e) {
+    console.log(e);
+    res.status(400).json({
+      status: "fail",
+      message: "User_id is Invalid",
+    });
+  }
+};
+
 exports.createOne = async (req, res) => {
   try {
     const rewardTypeList = JSON.parse(
@@ -87,6 +106,7 @@ exports.updateReward = async (req, res) => {
         {
           $set: {
             "batches.$[item].blocks.$[ele].isDone": true,
+            "batches.$[item].blocks.$[ele].date": new Date(),
             count: userObj.count + 1,
           },
         },

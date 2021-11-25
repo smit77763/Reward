@@ -22,7 +22,7 @@ const rewardSchema = new mongoose.Schema({
         type: Number,
         required: [true, "INDEX................"],
       },
-      batchNumber: [Number],
+      blockNumber: [Number],
     },
   ],
   batches: [

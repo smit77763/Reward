@@ -104,6 +104,7 @@ exports.updateReward = async (req, res) => {
       await rewardCollection.updateOne(
         {
           user_id: req.body.id,
+          "track.index": lenOfBatches,
         },
         {
           $set: {
@@ -112,14 +113,15 @@ exports.updateReward = async (req, res) => {
             count: userObj.count + 1,
           },
           $push: {
-            "track.$[val].batchNumber": 1,
+            "track.$.blockNumber": indexNumber,
+            // "track.$[val].batchNumber": indexNumber,
           },
         },
         {
           arrayFilters: [
             { "item._id": block_id },
             { "ele.index": indexNumber },
-            { "val.index": 0 },
+            // { "val.index": lenOfBatches },
           ],
         }
       );
@@ -135,6 +137,10 @@ exports.updateReward = async (req, res) => {
               $push: {
                 batches: {
                   blocks: rewardTypeList[lenOfBatches + 1].batch_1,
+                },
+                track: {
+                  index: lenOfBatches + 1,
+                  batchNumber: [],
                 },
               },
               $inc: { count: -4, lenOfBatches: 1 },

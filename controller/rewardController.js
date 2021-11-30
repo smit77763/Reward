@@ -151,12 +151,17 @@ exports.updateReward = async (req, res) => {
           });
       }
 
+      const rewardArray = [];
+      for (let i = 0; i <= lenOfBatches; i++) {
+        rewardArray.push(rewardTypeList[i].reward);
+      }
+
       const result = await rewardCollection.findOne({ user_id: req.body.id });
       res.status(201).json({
         status: "SUCCESS",
         data: {
           message: result,
-          reward: rewardTypeList[lenOfBatches].reward,
+          reward: rewardArray,
         },
       });
     } else {

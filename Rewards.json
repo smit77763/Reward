@@ -29,7 +29,8 @@
         "fees": 10,
         "isDone": false
       }
-    ]
+    ],
+    "reward": 10
   },
   {
     "batch_1": [
@@ -61,7 +62,8 @@
         "fees": 5,
         "isDone": false
       }
-    ]
+    ],
+    "reward": 20
   },
   {
     "batch_2": [
@@ -93,7 +95,8 @@
         "fees": 10,
         "isDone": false
       }
-    ]
+    ],
+    "reward": 30
   },
   {
     "batch_3": [
@@ -125,7 +128,8 @@
         "fees": 10,
         "isDone": false
       }
-    ]
+    ],
+    "reward": 40
   },
   {
     "batch_4": [
@@ -157,6 +161,7 @@
         "fees": 10,
         "isDone": false
       }
-    ]
+    ],
+    "reward": 50
   }
 ]

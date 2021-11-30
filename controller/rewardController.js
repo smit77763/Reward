@@ -126,10 +126,10 @@ exports.updateReward = async (req, res) => {
         }
       );
 
+      const rewardTypeList = JSON.parse(
+        fs.readFileSync(`${__dirname}/../Rewards.json`)
+      );
       if (userObj.count + 1 === 4) {
-        const rewardTypeList = JSON.parse(
-          fs.readFileSync(`${__dirname}/../Rewards.json`)
-        );
         await rewardCollection
           .updateOne(
             { user_id: req.body.id },
@@ -156,6 +156,7 @@ exports.updateReward = async (req, res) => {
         status: "SUCCESS",
         data: {
           message: result,
+          reward: rewardTypeList[lenOfBatches].reward,
         },
       });
     } else {

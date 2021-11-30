@@ -16,6 +16,18 @@ const rewardSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  rewardData: [
+    {
+      rewardAmount: {
+        type: Number,
+        required: [true, "Reward can't be less than 0"],
+      },
+      rewardDate: {
+        type: Date,
+        required: [true],
+      },
+    },
+  ],
   track: [
     {
       index: {

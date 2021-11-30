@@ -61,6 +61,7 @@ exports.createOne = async (req, res) => {
     newObject = {
       user_id: req.body.id,
       track: [{ index: 0, batchNumber: [] }],
+      rewardData: [],
       batches: [{ blocks: rewardTypeList[0].batch_0 }],
     };
 
@@ -154,6 +155,10 @@ exports.updateReward = async (req, res) => {
                 track: {
                   index: lenOfBatches + 1,
                   batchNumber: [],
+                },
+                rewardData: {
+                  rewardAmount: rewardTypeList[lenOfBatches].reward,
+                  rewardDate: new Date(),
                 },
               },
               $inc: { count: -4, lenOfBatches: 1 },

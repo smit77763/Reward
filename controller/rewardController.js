@@ -24,10 +24,22 @@ exports.getAllReward = async (req, res) => {
 exports.getOne = async (req, res) => {
   try {
     const query = await rewardCollection.find({ user_id: req.params.id });
+    const len = query[0].lenOfBatches;
+    const rewardTypeList = JSON.parse(
+      fs.readFileSync(`${__dirname}/../Rewards.json`)
+    );
+
+    const rewardArray = [];
+    for (let i = 0; i < len; i++) {
+      rewardArray.push(rewardTypeList[i].reward);
+      console.log(rewardTypeList[i].reward);
+    }
+
     res.status(201).json({
       status: "SUCCESS",
       data: {
         length: query.length,
+        reward: rewardArray,
         rewardList: query,
       },
     });
@@ -130,13 +142,14 @@ exports.updateReward = async (req, res) => {
         fs.readFileSync(`${__dirname}/../Rewards.json`)
       );
       if (userObj.count + 1 === 4) {
+        const batchNumber = `batch_${lenOfBatches + 1}`;
         await rewardCollection
           .updateOne(
             { user_id: req.body.id },
             {
               $push: {
                 batches: {
-                  blocks: rewardTypeList[lenOfBatches + 1].batch_1,
+                  blocks: rewardTypeList[lenOfBatches + 1][batchNumber],
                 },
                 track: {
                   index: lenOfBatches + 1,
@@ -152,7 +165,7 @@ exports.updateReward = async (req, res) => {
       }
 
       const rewardArray = [];
-      for (let i = 0; i <= lenOfBatches; i++) {
+      for (let i = 0; i < lenOfBatches; i++) {
         rewardArray.push(rewardTypeList[i].reward);
       }
 
